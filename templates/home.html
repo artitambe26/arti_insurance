@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="data:,">
+        <!-- <link rel="shortcut icon" href="#" /> -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title> Health Insurance charges (Rs.)</title>
+        <style>
+            input[type=number], select {
+            width: 20%;
+            padding: 5px 5px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            }
+            body, html {
+              height: 100%;
+              margin: 10;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            .bg-image {
+              /* The image used */
+              background-image: url("https://images.pexels.com/photos/7688374/pexels-photo-7688374.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+              
+              /* Add the blur effect */
+              filter: (8px);
+              -webkit-filter: blur(8px);
+              
+              /* Full height */
+              height: 100%; 
+              
+              /* Center and scale the image nicely */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            
+            /* Position text in the middle of the page/image */
+            .bg-text {
+              background-color: rgb(219, 207, 207); /* Fallback color */
+              background-color: rgba(12, 12, 11, 0.4); /* Black w/opacity/see-through */
+              color: rgb(245, 240, 250);
+              font-weight: bold;
+              border: 3px solid #f1f1f1;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 2;
+              width: 80%;
+              padding: 20px;
+              text-align: center;
+            }
+            </style>
+    </head>
+
+    <body TEXT = "WHITE";>
+        <div class="bg-image"></div>
+        <div class="bg-text">
+        <h1> HEALTH INSURANCE CHARGES </h1>
+        <form method="POST" action="/insurance_price">
+
+            
+            
+
+            <label>Age :</label>
+            <input style="font-size:15px" type = "number" name = "age"  placeholder="Enter Age" size="30" required>
+            
+            <br>
+            <br>
+
+            <label for="sex" >Gender   : </label>
+            
+            <label for="male">Male : </label>
+            <input style="font-size:15px" type="radio" name="sex" value="male">
+
+            <label for="female">Female : </label>
+            <input style="font-size:15px" type="radio" name="sex" value="female">
+              
+           
+            <br>
+            <br>
+
+            <label>BMI (Body Mass Index) : </label>
+            <input style="font-size:15px" type = "text" name = "bmi"  placeholder="Enter BMI " size="30" required>
+           
+            <br>
+            <br>
+
+            <label>Number of Children : </label>
+            <input style="font-size:15px" type = "text" name = "children" placeholder="Enter no. of children" size="30" required>
+           
+            <br>
+            <br>
+            <label for="smoker" >Smoker   : </label>
+            
+            <label for="No">No : </label>
+            <input style="font-size:15px" type="radio" name="smoker" value="no">
+
+            <label for="Yes">Yes : </label>
+            <input style="font-size:15px" type="radio" name="smoker" value="yes">
+            <br>
+            <br>
+
+            <label>Region : </label>
+            <select style="font-size:15px" class="region" name = "region" placeholder="Enter Region">
+                <option value = "northeast">Northeast</option>
+                <option value = "northwest">Northwest</option>
+                <option value = "southeast">Southeast</option>
+                <option value = "southweast">Southweast</option>
+        
+            </select>
+            <br>
+            <br>
+
+
+            <!-- Submit -->
+            <style>
+                .button {
+                    display: inline-block;
+                    border-radius: 4px;
+                    background-color: #278ed2;
+                    border: none;
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-size: 28px;
+                    padding: 20px;
+                    width: 180px;
+                    transition: all 0.5s;
+                    cursor: pointer;
+                    margin: 5px;
+                    }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+                }
+
+                .button span:after {
+                content: '\00bb';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+                }
+
+                .button:hover span {
+                padding-right: 25px;
+                }
+
+                .button:hover span:after {
+                opacity: 1;
+                right: 0;
+                }
+            </style>
+            <button style="font-size:20px;vertical-align:middle;font-family:verdana" type="submit" value="Submit" class="button"><span> charges </span></button>
+            <br><br>
+            <div style="font-size:25px;font-family:verdana" id="box">{{ predicted_price}} /- Rs. Only <h6>Thank You &#128522;<h6></h6></div>&nbsp;
+            <br>
+            <p>© Arti Tambe.</p>
+            <!-- <input type = "submit" value="SUBMIT">
+
+            <br> -->
+
+            <!-- <p> health insurance <b> {{ pred }} </b>   </p> -->
+
+
+        </form>
+
+
+    </body>
+</html>
